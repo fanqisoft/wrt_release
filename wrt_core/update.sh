@@ -34,6 +34,7 @@ source "$SCRIPT_DIR/modules/feeds.sh"
 source "$SCRIPT_DIR/modules/packages.sh"
 source "$SCRIPT_DIR/modules/system.sh"
 source "$SCRIPT_DIR/modules/cups.sh"
+source "$SCRIPT_DIR/modules/nikki.sh"
 
 
 main() {
@@ -42,6 +43,7 @@ main() {
     reset_feeds_conf
     update_feeds
     remove_unwanted_packages
+    update_nikki
     remove_tweaked_packages
     update_homeproxy
     fix_default_set
