@@ -14,9 +14,9 @@ remove_unwanted_packages() {
         "chinadns-ng" "ipt2socks" "tcping" "trojan-plus" "simple-obfs" "shadowsocksr-libev"
         "dae" "daed" "mihomo" "geoview" "tailscale" "open-app-filter" "msd_lite"
     )
-    local packages_utils=(
-        "cups"
-    )
+    # local packages_utils=(
+    #     "cups"
+    # )
     local small8_packages=(
         "ppp" "firewall" "dae" "daed" "daed-next" "libnftnl" "nftables" "dnsmasq" "luci-app-alist"
         "alist" "opkg" "smartdns" "luci-app-smartdns" "easytier"
@@ -37,11 +37,11 @@ remove_unwanted_packages() {
         fi
     done
 
-    for pkg in "${packages_utils[@]}"; do
-        if [[ -d ./feeds/packages/utils/$pkg ]]; then
-            \rm -rf ./feeds/packages/utils/$pkg
-        fi
-    done
+    # for pkg in "${packages_utils[@]}"; do
+    #     if [[ -d ./feeds/packages/utils/$pkg ]]; then
+    #         \rm -rf ./feeds/packages/utils/$pkg
+    #     fi
+    # done
 
     for pkg in "${small8_packages[@]}"; do
         if [[ -d ./feeds/small8/$pkg ]]; then
@@ -78,7 +78,8 @@ install_small8() {
         luci-app-quickstart luci-app-istorex luci-app-cloudflarespeedtest netdata luci-app-netdata \
         lucky luci-app-lucky luci-app-openclash luci-app-homeproxy luci-app-amlogic \
         tailscale luci-app-tailscale oaf open-app-filter luci-app-oaf easytier luci-app-easytier \
-        msd_lite luci-app-msd_lite cups luci-app-cupsd
+        msd_lite luci-app-msd_lite \
+        # cups luci-app-cupsd
 }
 
 install_passwall() {
@@ -251,7 +252,7 @@ update_lucky() {
 }
 
 update_smartdns() {
-    local SMARTDNS_REPO="https://github.com/ZqinKing/openwrt-smartdns.git"
+    local SMARTDNS_REPO="https://github.com/fanqisoft/openwrt-smartdns.git"
     local SMARTDNS_DIR="$BUILD_DIR/feeds/packages/net/smartdns"
     local LUCI_APP_SMARTDNS_REPO="https://github.com/pymumu/luci-app-smartdns.git"
     local LUCI_APP_SMARTDNS_DIR="$BUILD_DIR/feeds/luci/applications/luci-app-smartdns"
