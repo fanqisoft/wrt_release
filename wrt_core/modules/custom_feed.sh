@@ -94,7 +94,7 @@ install_custom_feed() {
         luci-app-netwiz luci-app-homeproxy luci-app-adguardhome luci-app-mosdns geo2txt
         luci-app-passwall nikki luci-app-nikki mihomo-meta
         open-app-filter luci-app-oaf lucky luci-app-lucky luci-app-easytier
-        luci-app-emmc-health luci-app-airoha-npu
+        luci-app-emmc-health luci-app-airoha-npu clashoo luci-app-clashoo
     )
     local custom_feed_sources=()
     local missing_feed_dirs=()
@@ -120,6 +120,7 @@ install_custom_feed() {
         "sbwml/luci-app-mosdns|https://github.com/sbwml/luci-app-mosdns.git|v5|mosdns luci-app-mosdns geo2txt"
         "Openwrt-Passwall/openwrt-passwall|https://github.com/Openwrt-Passwall/openwrt-passwall.git|main|luci-app-passwall"
         "nikkinikki-org/OpenWrt-nikki|https://github.com/nikkinikki-org/OpenWrt-nikki.git|main|nikki luci-app-nikki mihomo-meta"
+        "kenzok8/openwrt-clashoo|https://github.com/kenzok8/openwrt-clashoo.git|main|clashoo luci-app-clashoo"
     )
 
     feeds_path=$(get_feeds_path)
